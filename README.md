@@ -29,3 +29,42 @@ On the frozen **Push-T** benchmark across 30 paired seeds:
 ## 🏗️ System Architecture & Gradient Isolation
 
 ACEGP maintains a strict **stop-gradient by default** policy across all model components, with exactly one explicit exception: the rank-$r$ projection channel $\Pi$.
+
+# Clone repository
+    git clone [https://github.com/ACEGP-V/ACEGP.git](https://github.com/ACEGP-V/ACEGP.git)
+    cd ACEGP
+
+# Create conda environment
+conda create -n acegp python=3.10 -y
+conda activate acegp
+
+# Install dependencies
+    pip install -r requirements.txt
+
+1. Run Verification Protocol (Phase A)
+
+python scripts/run_phase_a.py --config configs/phase_a.yaml
+
+2. Train Model with Confined Coupling ($r=32$)
+
+       python train.py \
+          --config configs/pusht_acegp.yaml \
+          --rank 32 \
+          --seed 42 \
+          --device cuda:0
+
+3. Conformal Calibration (Stage B)
+
+       python calibrate_conformal.py \
+           --ckpt checkpoints/pusht_r32_seed42.pt \
+           --mode B-PLAN \
+           --alpha 0.10
+
+4. Evaluate Closed-Loop Deployment with AoE Gate (Stage D)
+  
+       python evaluate_closed_loop.py \
+           --ckpt checkpoints/pusht_r32_seed42.pt \
+          --calib_file calibration_r32.pt \
+          --aoe_gate \
+          --tau_task 1.0 \
+          --num_episodes 50   
