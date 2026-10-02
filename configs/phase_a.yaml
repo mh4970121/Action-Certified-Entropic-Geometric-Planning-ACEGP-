@@ -1,0 +1,10 @@
+device: "cuda:0"
+seed: 42
+latent_dim: 128
+rank: 32
+
+verification_tolerances:
+  c_iso_tol: 1.0e-12
+  c_conf_tol: 1.0e-8
+  c_flow_tol: 1.0e-6
+  c_grad_tol: 0.0
