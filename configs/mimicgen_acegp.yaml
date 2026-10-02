@@ -1,0 +1,20 @@
+experiment_name: "mimicgen_acegp_sweep"
+seed: 42
+device: "cuda:0"
+
+model:
+  latent_dim: 256
+  action_dim: 7
+  obs_dim: 14
+  hidden_dim: 512
+  rank: 64
+
+training:
+  batch_size: 128
+  learning_rate: 5.0e-4
+  num_epochs: 150
+  vht_lambda: 0.15
+
+conformal:
+  alpha: 0.05
+  tau_task: 0.8
