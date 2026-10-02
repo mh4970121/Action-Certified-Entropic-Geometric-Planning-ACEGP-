@@ -1,7 +1,6 @@
-# Action-Certified-Entropic-Geometric-Planning-ACEGP-
+# Action-Certified Entropic–Geometric Planning (ACEGP)
 Confined Coupling and Conformal Action Certificates for Latent World Models
 
-# Action-Certified Entropic–Geometric Planning (ACEGP)
 
 [![arXiv](https://img.shields.io/badge/arXiv-2026.XXXXX-b31b1b.svg)](https://arxiv.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
