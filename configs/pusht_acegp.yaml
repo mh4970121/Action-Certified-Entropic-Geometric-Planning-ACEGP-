@@ -1,0 +1,20 @@
+experiment_name: "pusht_acegp_sweep"
+seed: 42
+device: "cuda:0"
+
+model:
+  latent_dim: 128
+  action_dim: 2
+  obs_dim: 5
+  hidden_dim: 256
+  rank: 32
+
+training:
+  batch_size: 64
+  learning_rate: 1.0e-3
+  num_epochs: 100
+  vht_lambda: 0.1
+
+conformal:
+  alpha: 0.10
+  tau_task: 1.0
