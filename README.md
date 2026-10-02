@@ -31,7 +31,7 @@ On the frozen **Push-T** benchmark across 30 paired seeds:
 ACEGP maintains a strict **stop-gradient by default** policy across all model components, with exactly one explicit exception: the rank-$r$ projection channel $\Pi$.
 
 # Clone repository
-    git clone [https://github.com/ACEGP-V/ACEGP.git](https://github.com/ACEGP-V/ACEGP.git)
+    git clone [https://github.com/mh4970121/Action-Certified-Entropic-Geometric-Planning-ACEGP-/tree/main.git](https://github.com/mh4970121/Action-Certified-Entropic-Geometric-Planning-ACEGP-/tree/main.git)
     cd ACEGP
 
 # Create conda environment
